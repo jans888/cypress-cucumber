@@ -1,0 +1,12 @@
+{
+    "screenshotsFolder": "cypress/results/reports/screenshots",
+    "viewportWidth": 1920,
+    "viewportHeight": 1080,
+    "chromeWebSecurity": false,
+    "numTestsKeptInMemory": 1,
+    "defaultCommandTimeout": 6000,
+    "requestTimeout": 8000,
+    "pageLoadTimeout": 70000,
+    "testFiles": "**/*.{feature,features}",
+    "video": false
+}

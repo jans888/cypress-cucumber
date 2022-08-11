@@ -1,0 +1,31 @@
+{
+  "name": "cypress-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "report:clear": "if exist reports rmdir /S /Q \"reports/\" && mkdir \"reports\"",
+    "report:generate": "node cucumber-html-report.js",
+    "cy:run:headless": "cypress run --browser chrome -e TAGS=\"@searchFeature\"",
+    "cy:run:head": "cypress run --headed --browser chrome -e TAGS=\"@searchFeature\"",
+    "test:headless": "npm run report:clear && npm run cy:run:headless && npm run report:generate",
+    "test:headed": "npm run report:clear && npm run cy:run:head && npm run report:generate",
+    "cy:open": "npx cypress open"
+  },
+  "author": "JS",
+  "license": "ISC",
+  "cypress-cucumber-preprocessor": {
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    },
+    "nonGlobalStepDefinitions": true
+  },
+  "devDependencies": {
+    "cypress": "^9.3.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "multiple-cucumber-html-reporter": "^1.21.6"
+  }
+}

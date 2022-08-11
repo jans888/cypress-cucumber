@@ -1,0 +1,5 @@
+#Cypress ignore  for commits:
+node_modules
+reports
+package-lock.json
+cypress/cucumber-json
