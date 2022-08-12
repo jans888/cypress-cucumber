@@ -1,0 +1,22 @@
+How would you test specifically the search feature on the tiketa platform? Suggest
+mechanism/layer rather than test cases.
+
+Frontend and backend parts can be used for Search feature testing.
+Firstly, ticket results can be checked in DB through API call or directly in DB, and then results from DB can be compared with results in UI.
+Also, the Search feature can be tested from the performance perspective. 
+For example, how results are appeared in UI, if the website visits 100, 1000, or more visitors at one time.
+The search feature can be tested on different browsers - Chrome, Firefox, Edge, and Electron with different viewports settings.
+Also, endpoints, which are consumed by UI can be tested and then check, does the date appears properly.
+
+
+
+How would you set up for testing this feature with automation in mind?
+
+To prepare the testing with automation the following main points need to be implemented:
+1. Hardcoded selectors need to be avoided. All selectors should be located outside test cases and should be stored in separate page object files.
+2. Environment's hosts, user credentials, and viewports settings need to be parametrized, to have the possibility to use it in the command line with the native test runner.
+For example, in cypress, the following command can be used where username and host are parametrized.
+cypress run --headed --browser chrome --env username=${username} --env host=${host} -e TAGS=\"@searchFeature\""
+3. Execution of these test cases can be implemented to the existing CI/CD. 
+If not, automation execution of test cases can be implemented using Jenkins and the native test runner of the test automation framework.
+
