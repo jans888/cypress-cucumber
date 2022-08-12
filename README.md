@@ -21,7 +21,7 @@ Clone repository:
 
 ```sh
 git clone https://github.com/jans888/cypress-cucumber.git
-cd testExercise
+cd cypress-cucumber
 ```
 
 Install dependencies:
